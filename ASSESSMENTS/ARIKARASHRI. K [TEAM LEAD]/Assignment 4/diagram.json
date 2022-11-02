@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "19D114 ARIKARASHRI.K",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -83.74, "left": 200.7, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -65.62,
+      "left": -75.27,
+      "attrs": { "distance": "308" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.2", "ultrasonic1:GND", "black", [ "v-0.44", "h-120.97" ] ],
+    [ "esp:VIN", "ultrasonic1:VCC", "red", [ "h0" ] ],
+    [ "esp:D12", "ultrasonic1:ECHO", "yellow", [ "h0" ] ],
+    [ "esp:D13", "ultrasonic1:TRIG", "green", [ "h0" ] ]
+  ]
+}
